@@ -2,7 +2,7 @@
 <section id="container"> <!-- Holds the content and sidebar panes -->
   <section id="content"> <!-- The main information panel for our theme -->
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-      <section <?php post_class(); ?> id="post-<?php the_ID(); ?>"> <!-- Opening line for headline and -->
+      <section <?php post_class(); ?> id="post-<?php the_ID(); ?>"> <!-- Opening line for headline and content  -->
         <h2 class="wp-title">
           <a href="
             <?php the_permalink(); ?>
@@ -11,16 +11,16 @@
           </a>
         </h2>
         <?php the_content(); ?>
-      </section class="post-nav">
+      </section> <!-- Closing line for headline and content -->
       <?php endwhile; ?>
-      <section>
+      <section class="post-nav"> <!-- Opening line for post navigation -->
         <p><?php previous_post_link("%link", "Previuos Post"); ?></p>
         <p><?php next_post_link("%link", "Next Post"); ?></p>
-      </section>
+      </section> <!-- Closing line for post navigation -->
       <?php else : ?>
-        <section>
+        <section <?php post_class(); ?> id="post-<?php the_ID(); ?>"> <!-- opening line not found -->
           <h3>Sorry, couldn't find what you were looking for.</h3>
-        </section>
+        </section> <!-- closing line not found -->
     <?php endif; ?>
     <!--
     <p>We will replace this content once we are connected to the visual editor.</p>
