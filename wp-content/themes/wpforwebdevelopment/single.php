@@ -1,3 +1,14 @@
+<?php
+  /*
+    The template for displayin single posts.
+    This is the template that displays all single posts by default.
+    Please note that this is the WordPress construct for single posts and that
+    other "posts" on your WordPress site will use a different template.
+    @package WordPress
+    @subpackage Wordpress_For_Web_Devolepment
+    @since WordPress for Web Development 0.1
+  */
+?>
 <?php get_header(); ?>
 <section id="container"> <!-- Holds the content and sidebar panes -->
   <section id="content"> <!-- The main information panel for our theme -->

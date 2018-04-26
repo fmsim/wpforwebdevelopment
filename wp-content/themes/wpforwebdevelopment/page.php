@@ -1,3 +1,19 @@
+<?php
+  /*
+    Template Name: My Custom Page
+  */
+?>
+<?php
+  /*
+    The template for displayin pages.
+    This is the template that displays all pages by default.
+    Please note that this is the WordPress construct for pages and that
+    other "pages" on your WordPress site will use a different template.
+    @package WordPress
+    @subpackage Wordpress_For_Web_Devolepment
+    @since WordPress for Web Development 0.1
+  */
+?>
 <?php get_header(); ?>
 <section id="container"> <!-- Holds the content and sidebar panes -->
   <section id="content"> <!-- The main information panel for our theme -->
@@ -14,10 +30,6 @@
         <?php the_content(); ?>
       </section> <!-- Closing line for headline and content -->
       <?php endwhile; ?>
-      <section class="post-nav"> <!-- Opening line for post navigation -->
-        <p><?php previous_post_link("%link", "Previuos Post"); ?></p>
-        <p><?php next_post_link("%link", "Next Post"); ?></p>
-      </section> <!-- Closing line for post navigation -->
       <?php else : ?>
         <section <?php post_class(); ?> id="post-<?php the_ID(); ?>"> <!-- opening line not found -->
           <h3>Sorry, couldn't find what you were looking for.</h3>
