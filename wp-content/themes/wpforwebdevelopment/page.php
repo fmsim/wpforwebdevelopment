@@ -5,10 +5,7 @@
 ?>
 <?php
   /*
-    The template for displayin pages.
-    This is the template that displays all pages by default.
-    Please note that this is the WordPress construct for pages and that
-    other "pages" on your WordPress site will use a different template.
+    The template for displayin My Custom Pages
     @package WordPress
     @subpackage Wordpress_For_Web_Devolepment
     @since WordPress for Web Development 0.1
