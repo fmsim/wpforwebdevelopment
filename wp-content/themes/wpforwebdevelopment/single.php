@@ -44,5 +44,6 @@
     </p>
     -->
   </section> <!-- #content -->
+  <?php get_sidebar(); ?>
   <?php get_footer(); ?>
 </section> <!-- #container -->
