@@ -1,29 +1,23 @@
 <?php
   /*
-    Template Name: My Custom Page
-  */
-  /*
-    My first custom page template
+    The template for displaying 404 "not found" pages.
+    This is the template that displays all error pages by default.
     @package WordPress
     @subpackage Wordpress_For_Web_Devolepment
     @since WordPress for Web Development 0.1
   */
 ?>
-<?php get_header('cfield'); ?> <!-- header-cfield.php => (header-)'cfield'(.php) -->
+<?php get_header(); ?>
 <section id="container"> <!-- Holds the content and sidebar panes -->
   <section id="content"> <!-- The main information panel for our theme -->
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <section <?php post_class(); ?> id="post-<?php the_ID(); ?>"> <!-- Opening line for headline and content  -->
-          <h2 class="wp-title">
-            <a href="<?php the_permalink(); ?>">
-              <?php the_title(); ?>
-            </a>
-          </h2>
-          <h3>This Template is <?php global $template; echo basename($template); ?></h3>
-          <?php the_content(); ?>
-        </section> <!-- Closing line for headline and content -->
-      <?php endwhile; ?>
-    <?php endif; ?>
+      <section class="error" id="post-error"> <!-- Opening line for headline and content  -->
+        <h2 class="wp-title">Content not found!</h2>
+        <h3>This Template is <?php global $template; echo basename($template); ?></h3>
+        <img src="http://localhost/wpforwebdevelopment/wp-content/uploads/2018/04/emberarrasing.png"
+          alt="What you are looking for couldn't be found">
+        <h3>This is embarrasing</h3>
+        <p>It looks like what you are looking for couldn't be found</p>
+      </section> <!-- Closing line for headline and content -->
     <!--
     <p>We will replace this content once we are connected to the visual editor.</p>
     <p>
@@ -34,6 +28,6 @@
     </p>
     -->
   </section> <!-- #content -->
-  <?php get_sidebar(); ?>
+  <?php get_sidebar('error'); ?> <!-- sidebar-error.php  => (sidebar-)'error'(.php) -->
   <?php get_footer(); ?>
 </section> <!-- #container -->

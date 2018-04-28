@@ -33,6 +33,16 @@
       'before_title'  => '<h4 class="widget-title">',
       'after_title'   => '</h4>'
     ));
+    register_sidebar(array(
+      'name'          => "404 Sidebar",
+      'id'            => 'not-found-widget',
+      'description'   => "The widget for the 404 page to direct visitors to more relevant content",
+      'class'         => 'widget-block',
+      'before_widget' => '<article id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</article>',
+      'before_title'  => '<h4 class="widget-title">',
+      'after_title'   => '</h4>'
+    ));
   }
   add_action('widgets_init', 'theme_widgets_and_sidebars');
 
