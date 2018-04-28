@@ -10,7 +10,19 @@
     <body <?php body_class(); ?>>
       <div id="wrapper"> <!-- Holds the whole website -->
         <header>
-          <h1 id="wp-name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+          <?php
+            $webNameExtend = get_post_meta($post->ID, 'web-name-extension', true);
+            if (!empty($webNameExtend)) :
+          ?>
+            <h1 id="wp-name"><a href="<?php bloginfo('url'); ?>">
+              <?php bloginfo('name'); ?>
+              <?php echo " " . $webNameExtend; ?>
+            </a></h1>
+          <?php else : ?>
+            <h1 id="wp-name"><a href="<?php bloginfo('url'); ?>">
+              <?php bloginfo('name'); ?>
+            </a></h1>
+          <?php endif; ?>
           <h3 id="site-description"><?php bloginfo('description') ?></h3>
         </header>
         <nav id="primary-menu">
