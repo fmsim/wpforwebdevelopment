@@ -13,3 +13,11 @@
           <h1 id="wp-name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
           <h3 id="site-description"><?php bloginfo('description') ?></h3>
         </header>
+        <nav id="primary-menu">
+          <?php
+            wp_nav_menu(array(
+              "theme_location" => "main-menu",
+              "container_class" => "main-nav"
+            ));
+          ?>
+        </nav>

@@ -1,9 +1,9 @@
 <?php
   /*
-    The template for displaying Pages
-    This is the template that displays all pages by default.
-    Please not that this is the WordPress construct for pages and that
-    other "pages" on your WordPress site will use a different template.
+    Template Name: My Custom Page
+  */
+  /*
+    My first custom page template
     @package WordPress
     @subpackage Wordpress_For_Web_Devolepment
     @since WordPress for Web Development 0.1
