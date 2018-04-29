@@ -13,6 +13,8 @@
         'chat'
       ]
     );
+    add_theme_support('html5', array('search-form'));
+    add_theme_support('post-thumbnails');
   }
   add_action('after_setup_theme', 'custom_theme_styles');
   /** Create a function to handle all the theme setup items **/
