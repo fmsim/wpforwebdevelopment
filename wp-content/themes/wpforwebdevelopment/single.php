@@ -30,9 +30,6 @@
         <p><?php next_post_link("%link", "Next Post"); ?></p>
       </section> <!-- Closing line for post navigation -->
       <?php else : ?>
-        <section <?php post_class(); ?> id="post-<?php the_ID(); ?>"> <!-- opening line not found -->
-          <h3>Sorry, couldn't find what you were looking for.</h3>
-        </section> <!-- closing line not found -->
     <?php endif; ?>
     <!--
     <p>We will replace this content once we are connected to the visual editor.</p>

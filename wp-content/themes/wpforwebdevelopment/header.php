@@ -24,7 +24,7 @@
               <img src="<?php header_image(); ?>" height="<?php get_custom_header()->height; ?>"
                 width="<?php get_custom_header()->width; ?>"
                 alt="Develop WordPress Themes!">
-            </section> <!-- ends custom header container (#custom-header-image) -->
+            </section> <!-- ends header image container (#custom-header-image) -->
           <?php endif; ?>
         </header>
         <nav id="primary-menu">
