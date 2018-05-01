@@ -1,5 +1,17 @@
 <?php
-/** Add support for WordPress features **/
+/*******************************************************************************
+  Function to load our styles and scripts into the head tag
+*******************************************************************************/
+  function load_site_styles_and_scripts() {
+    // Register styles
+    wp_register_style('style', get_stylesheet_uri());
+    // Enqueue styles
+    wp_enqueue_style('style');
+  }
+  add_action('wp_enqueue_scripts', 'load_site_styles_and_scripts');
+/*******************************************************************************
+  Add support for WordPress features
+*******************************************************************************/
   function custom_theme_styles() {
     add_theme_support( 'post-formats', [
         'aside',
@@ -15,7 +27,13 @@
     );
     add_theme_support('html5', array('search-form'));
     add_theme_support('post-thumbnails');
-    add_theme_support('custom-logo');
+    /** custom-logo **/
+    $defaults = array(
+      'width'       => 300,
+      'flex-height' => true
+    );
+    add_theme_support('custom-logo', $defaults);
+    /** custom-header **/
     register_default_headers(
       array( // enclosing array
         'codepoet' => array( // begin register image
@@ -61,7 +79,9 @@
     register_nav_menu('main-menu', 'The main header menu');
   }
   add_action('init', 'load_on_initialize');
-  /** Register the sidebars **/
+  /*****************************************************************************
+    Register the sidebars
+  *****************************************************************************/
   function theme_widgets_and_sidebars() {
     register_sidebar(array(
       'name'          => "Main Sidebar",
