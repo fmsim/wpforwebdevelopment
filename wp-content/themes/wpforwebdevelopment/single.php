@@ -22,6 +22,11 @@
           </a>
         </h2>
         <h3>This Template is <?php global $template; echo basename($template); ?></h3>
+        <?php if (has_post_thumbnail()) : ?>
+          <div class="post-featured-image">
+            <?php the_post_thumbnail('medium'); ?>
+          </div>
+        <?php endif; ?>
         <?php the_content(); ?>
       </section> <!-- Closing line for headline and content -->
       <?php endwhile; ?>

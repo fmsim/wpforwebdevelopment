@@ -15,8 +15,8 @@
     $args = array(
       'post_type'      => 'post',
       'post_status'    => 'published',
-      'category_name'  => 'catpath',
-      //'cat'            => '-1',
+      //'category_name'  => 'catpath',
+      'cat'            => '-1',
       'posts_per_page' => '6'
     );
     $cat1_posts = new WP_Query($args);
