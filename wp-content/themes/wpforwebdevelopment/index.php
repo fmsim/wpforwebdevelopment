@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<section id="container"> <!-- Holds the content and sidebar panes -->
-  <section id="content"> <!-- The main information panel for our theme -->
+<section id="container" class="row"> <!-- Holds the content and sidebar panes -->
+  <section id="content" class="col-md-9"> <!-- The main information panel for our theme -->
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <section <?php post_class(); ?> id="post-<?php the_ID(); ?>"> <!-- Opening line for headline and content  -->
         <h2 class="wp-title">

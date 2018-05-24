@@ -4,11 +4,14 @@
 *******************************************************************************/
   function load_site_styles_and_scripts() {
     // Register styles
+    wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Volkhov:400,400i,700,700i',
+      false, null);
     wp_register_style('bootstrapcss', get_template_directory_uri() . '/css/bootstrap.min.css',
-      false, '4.1.1', 'all');
-    wp_register_style('layouts', get_template_directory_uri() . '/layouts.css', false, '1.0', 'all');
+      array(), '4.1.1', 'all');
     wp_register_style('style', get_stylesheet_uri());
+    wp_register_style('layouts', get_template_directory_uri() . '/layouts.css', false, '1.0', 'all');
     // Enqueue styles
+    wp_enqueue_style('googlefonts');
     wp_enqueue_style('bootstrapcss');
     wp_enqueue_style('layouts');
     wp_enqueue_style('style');
@@ -115,6 +118,16 @@
       'id'            => 'not-found-widget',
       'description'   => "The widget for the 404 page to direct visitors to more relevant content",
       'class'         => 'widget-block',
+      'before_widget' => '<article id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</article>',
+      'before_title'  => '<h4 class="widget-title">',
+      'after_title'   => '</h4>'
+    ));
+    register_sidebar(array(
+      'name'          => "Header Widget",
+      'id'            => 'header-widget',
+      'description'   => "The widget for the header section of our theme",
+      'class'         => 'header_block widget-block',
       'before_widget' => '<article id="%1$s" class="widget %2$s">',
       'after_widget'  => '</article>',
       'before_title'  => '<h4 class="widget-title">',
